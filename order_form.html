@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Order Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    h3 {
+      text-align: center;
+      background: lightskyblue;
+      padding: 10px;
+      border-radius: 45px;
+    }
+    label {
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    input[type="checkbox"], input[type="radio"] {
+      width: auto;
+      transform: scale(1.1);
+      margin-right: 6px;
+    }
+    textarea {
+      height: 80px;
+    }
+    .form-section {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+      background-color: #f0f8ff;
+    }
+    .btn-group {
+      text-align: center;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button[type="reset"] {
+      background-color: #f44336;
+    }
+    img.header-img {
+      width: 40%;
+      margin: auto;
+      max-height: 200px;
+      display: block;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+    }
+    td {
+      padding: 5px;
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="Screenshot 2025-04-21 225023.png" title="ORDER NOW" alt="Order Banner" class="header-img">
+    <h2>Customer Order Form</h2>
+
+    <form>
+      <div class="form-section">
+        <h3>Customer Information</h3>
+        <table>
+          <tr>
+            <td><label for="name">Full Name:</label></td>
+            <td><input type="text" id="name" placeholder="Type full name here..." required></td>
+          </tr>
+          <tr>
+            <td><label for="address" >Complete Address:</label></td>
+            <td><input type="text" id="address" placeholder="Type address here..." required></td>
+          </tr>
+          <tr>
+            <td><label for="contact" >Contact Number:</label></td>
+            <td><input type="tel" id="contact" placeholder="(+63)*** *** ****" required></td>
+          </tr>
+          <tr>
+            <td><label for="email">Email Address:</label></td>
+            <td><input type="email" id="email" placeholder="example@gmail.com" required></td>
+          </tr>
+          <tr>
+            <td><label for="desc">Description:</label></td>
+            <td><textarea id="desc" placeholder="How to get to your place..."></textarea></td>
+          </tr>
+          <tr>
+            <td><label for="datetime">Date/Time of Order:</label></td>
+            <td><input type="datetime-local" id="datetime"></td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="form-section">
+        <h3>Burgers</h3>
+        <label><input type="checkbox" id="patty1">Single Patty</label><br>
+        <label><input type="checkbox" id="patty2">Double Patty</label><br>
+        <label><input type="checkbox" id="cheese">Cheese</label><br>
+        <label><input type="checkbox" id="coleslaw">Coleslaw</label><br>
+        <label><input type="checkbox" id="tomato">Tomato</label><br>
+        <label><input type="checkbox" id="onion">Onion</label><br>
+        <label><input type="checkbox" id="cucumber">Cucumber</label><br>
+        <label><input type="checkbox" id="bacon">Bacon</label><br><br>
+
+        <label for="bun">Choice of Bun:</label>
+        <select id="bun">
+          <option>White Bun</option>
+          <option>Wheat Bun</option>
+          <option>Honey Oat</option>
+          <option>Sugar-Free</option>
+        </select>
+        <label for="burger-qty"><br>Quantity:</label>
+        <input type="number" id="burger-qty" min="0">
+      </div>
+
+      <div class="form-section">
+        <h3>Pasta</h3>
+        <label><input type="checkbox">Carbonara</label><br>
+        <label><input type="checkbox">Pesto</label><br>
+        <label><input type="checkbox">Spaghetti</label><br>
+        <label><input type="checkbox">Extra Cheese</label><br>
+        <label><input type="checkbox">Extra Sauce</label><br>
+        <label><input type="checkbox">Truffle Cream</label><br>
+        <label for="pasta-qty"><br>Quantity (per box):</label>
+        <input type="number" id="pasta-qty" min="0">
+      </div>
+
+      <div class="form-section">
+        <h3>Fries</h3>
+        <label><input type="radio" name="fries-size">Small</label>
+        <label><input type="radio" name="fries-size">Medium</label>
+        <label><input type="radio" name="fries-size">Large</label>
+        <br><br>
+        <label for="flavor">Flavor:</label>
+        <select id="flavor">
+          <option>BBQ</option>
+          <option>Cheese</option>
+          <option>Sour Cream</option>
+        </select>
+        <label for="fries-qty"><br>Quantity:</label>
+        <input type="number" id="fries-qty" min="0">
+      </div>
+
+      <div class="form-section">
+        <h3>Drinks</h3>
+        <label for="drink-type">Type of Drink:</label>
+        <input type="text" id="drink-type">
+        <label for="drink-size"><br>Size:</label>
+        <select id="drink-size">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+        <label for="drink-qty"><br>Quantity:</label>
+        <input type="number" id="drink-qty" min="0">
+      </div>
+
+      <div class="form-section">
+        <h3>Delivery Method</h3>
+        <label><input type="radio" name="delivery">Delivery</label>
+        <label><input type="radio" name="delivery">Pick-up</label>
+      </div>
+
+      <div class="form-section">
+        <h3>Feedback</h3>
+        <label for="feedback">How can we improve our ordering form?</label>
+        <textarea id="feedback"></textarea>
+      </div>
+
+      <div class="btn-group">
+        <button type="submit">Submit Form</button>
+        <button type="reset">Clear Form</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
